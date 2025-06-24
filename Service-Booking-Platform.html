@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ServiceConnect</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#4F46E5',secondary:'#10B981'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+width: 375px;
+margin: 0 auto;
+min-height: 762px;
+position: relative;
+}
+.gradient-bg {
+background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Nav Bar -->
+<nav class="fixed w-full top-0 bg-white shadow-sm z-50 px-4 py-3 flex justify-between items-center">
+<div class="text-xl font-medium tracking-tight text-primary">SERVO<span class="font-light">SEVEN</span></div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-global-line ri-lg text-gray-600"></i>
+</div>
+<button class="text-sm font-medium text-primary">Log In</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-16 pb-20 px-4">
+<!-- Hero Section -->
+<section class="mt-6 mb-8">
+<div class="rounded-xl overflow-hidden h-48 mb-6">
+<img src="https://readdy.ai/api/search-image?query=diverse%20group%20of%20professional%20service%20providers%2C%20stylists%2C%20technicians%2C%20and%20beauty%20experts%20smiling%20at%20camera%2C%20professional%20photography%2C%20bright%20lighting%2C%20modern%20salon%20interior%2C%20high%20quality%2C%20commercial%20photography&width=800&height=400&seq=1&orientation=landscape" alt="Service Professionals" class="w-full h-full object-cover object-top">
+</div>
+<h1 class="text-2xl font-bold text-gray-900 mb-3">Connect with top professionals in your area</h1>
+<p class="text-gray-600 mb-6">Book appointments with the best stylists, technicians, and service providers. Or grow your business by joining our platform.</p>
+<div class="flex flex-col gap-4 mb-8">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 flex items-center justify-center text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-sm text-gray-700">Easy online booking 24/7</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 flex items-center justify-center text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-sm text-gray-700">Verified professionals with reviews</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 flex items-center justify-center text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-sm text-gray-700">Loyalty rewards & referral bonuses</span>
+</div>
+</div>
+</section>
+<!-- User Type Selection -->
+<section class="mb-8">
+<h2 class="text-lg font-semibold text-gray-800 mb-4">I want to...</h2>
+<div class="flex flex-col gap-4">
+<div id="client-card" class="border border-gray-200 rounded-xl p-4 cursor-pointer hover:border-primary transition-colors">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<i class="ri-user-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-base font-medium">Book Services</h3>
+</div>
+<p class="text-sm text-gray-600">Find and book appointments with top professionals in your area.</p>
+</div>
+<div id="provider-card" class="border border-gray-200 rounded-xl p-4 cursor-pointer hover:border-primary transition-colors">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+<i class="ri-store-line ri-lg text-secondary"></i>
+</div>
+<h3 class="text-base font-medium">Manage My Business</h3>
+</div>
+<p class="text-sm text-gray-600">Grow your client base and manage your appointments efficiently.</p>
+</div>
+</div>
+</section>
+<!-- Trust Indicators -->
+<section class="mb-8 py-6 px-4 gradient-bg rounded-xl">
+<div class="flex justify-between mb-6">
+<div class="text-center">
+<p class="text-2xl font-bold text-primary">10k+</p>
+<p class="text-xs text-gray-600">Active Users</p>
+</div>
+<div class="text-center">
+<p class="text-2xl font-bold text-primary">2.5k+</p>
+<p class="text-xs text-gray-600">Professionals</p>
+</div>
+<div class="text-center">
+<p class="text-2xl font-bold text-primary">50k+</p>
+<p class="text-xs text-gray-600">Bookings</p>
+</div>
+</div>
+<div class="flex items-center justify-center gap-2">
+<div class="flex">
+<div class="w-6 h-6 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-yellow-400">
+<i class="ri-star-half-fill"></i>
+</div>
+</div>
+<p class="text-sm font-medium text-gray-700">4.8 average rating</p>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mb-8">
+<button id="signup-btn" class="w-full bg-primary text-white font-medium py-3 rounded-button shadow-sm hover:bg-primary/90 transition-colors">Sign Up Free</button>
+<p class="text-center text-sm text-gray-600 mt-3">Already have an account? <a href="#" class="text-primary font-medium">Log In</a></p>
+</section>
+<!-- Featured Services -->
+<section class="mb-8">
+<h2 class="text-lg font-semibold text-gray-800 mb-4">Popular Services</h2>
+<div class="grid grid-cols-4 gap-3">
+<div class="text-center">
+<div class="w-16 h-16 mx-auto rounded-full overflow-hidden mb-2">
+<img src="https://readdy.ai/api/search-image?query=icon%2C%203D%20cartoon%2C%20hair%20salon%2C%20the%20icon%20should%20take%20up%2070%25%20of%20the%20frame%2C%20vibrant%20colors%20with%20soft%20gradients%2C%20minimalist%20design%2C%20smooth%20rounded%20shapes%2C%20subtle%20shading%2C%20no%20outlines%2C%20centered%20composition%2C%20isolated%20on%20white%20background%2C%20playful%20and%20friendly%20aesthetic%2C%20isometric%20perspective%2C%20high%20detail%20quality%2C%20clean%20and%20modern%20look%2C%20single%20object%20focus&width=128&height=128&seq=2&orientation=squarish" alt="Haircut" class="w-full h-full object-cover">
+</div>
+<p class="text-xs text-gray-700 whitespace-nowrap overflow-hidden text-overflow-ellipsis">Haircuts</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 mx-auto rounded-full overflow-hidden mb-2">
+<img src="https://readdy.ai/api/search-image?query=icon%2C%203D%20cartoon%2C%20nail%20polish%2C%20the%20icon%20should%20take%20up%2070%25%20of%20the%20frame%2C%20vibrant%20colors%20with%20soft%20gradients%2C%20minimalist%20design%2C%20smooth%20rounded%20shapes%2C%20subtle%20shading%2C%20no%20outlines%2C%20centered%20composition%2C%20isolated%20on%20white%20background%2C%20playful%20and%20friendly%20aesthetic%2C%20isometric%20perspective%2C%20high%20detail%20quality%2C%20clean%20and%20modern%20look%2C%20single%20object%20focus&width=128&height=128&seq=3&orientation=squarish" alt="Manicure" class="w-full h-full object-cover">
+</div>
+<p class="text-xs text-gray-700 whitespace-nowrap overflow-hidden text-overflow-ellipsis">Manicure</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 mx-auto rounded-full overflow-hidden mb-2">
+<img src="https://readdy.ai/api/search-image?query=icon%2C%203D%20cartoon%2C%20massage%2C%20the%20icon%20should%20take%20up%2070%25%20of%20the%20frame%2C%20vibrant%20colors%20with%20soft%20gradients%2C%20minimalist%20design%2C%20smooth%20rounded%20shapes%2C%20subtle%20shading%2C%20no%20outlines%2C%20centered%20composition%2C%20isolated%20on%20white%20background%2C%20playful%20and%20friendly%20aesthetic%2C%20isometric%20perspective%2C%20high%20detail%20quality%2C%20clean%20and%20modern%20look%2C%20single%20object%20focus&width=128&height=128&seq=4&orientation=squarish" alt="Massage" class="w-full h-full object-cover">
+</div>
+<p class="text-xs text-gray-700 whitespace-nowrap overflow-hidden text-overflow-ellipsis">Massage</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 mx-auto rounded-full overflow-hidden mb-2">
+<img src="https://readdy.ai/api/search-image?query=icon%2C%203D%20cartoon%2C%20facial%20treatment%2C%20the%20icon%20should%20take%20up%2070%25%20of%20the%20frame%2C%20vibrant%20colors%20with%20soft%20gradients%2C%20minimalist%20design%2C%20smooth%20rounded%20shapes%2C%20subtle%20shading%2C%20no%20outlines%2C%20centered%20composition%2C%20isolated%20on%20white%20background%2C%20playful%20and%20friendly%20aesthetic%2C%20isometric%20perspective%2C%20high%20detail%20quality%2C%20clean%20and%20modern%20look%2C%20single%20object%20focus&width=128&height=128&seq=5&orientation=squarish" alt="Facial" class="w-full h-full object-cover">
+</div>
+<p class="text-xs text-gray-700 whitespace-nowrap overflow-hidden text-overflow-ellipsis">Facial</p>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="mb-8">
+<h2 class="text-lg font-semibold text-gray-800 mb-4">What People Say</h2>
+<div class="bg-gray-50 rounded-xl p-4 mb-4">
+<div class="flex items-start gap-3 mb-3">
+<div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden flex-shrink-0">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20woman%20with%20short%20blonde%20hair%2C%20smiling%2C%20business%20casual%20attire%2C%20neutral%20background%2C%20high%20quality%20portrait&width=100&height=100&seq=6&orientation=squarish" alt="Emma Thompson" class="w-full h-full object-cover">
+</div>
+<div>
+<p class="text-sm font-medium text-gray-800">Emma Thompson</p>
+<div class="flex mt-1">
+<div class="w-4 h-4 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill ri-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill ri-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill ri-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill ri-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill ri-xs"></i>
+</div>
+</div>
+</div>
+</div>
+<p class="text-sm text-gray-600">"I love how easy it is to find and book appointments. The app remembers my preferences and suggests stylists I might like. Saved me so much time!"</p>
+</div>
+<div class="bg-gray-50 rounded-xl p-4">
+<div class="flex items-start gap-3 mb-3">
+<div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden flex-shrink-0">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20man%20with%20dark%20hair%20and%20beard%2C%20smiling%2C%20business%20casual%20attire%2C%20neutral%20background%2C%20high%20quality%20portrait&width=100&height=100&seq=7&orientation=squarish" alt="Michael Rodriguez" class="w-full h-full object-cover">
+</div>
+<div>
+<p class="text-sm font-medium text-gray-800">Michael Rodriguez</p>
+<div class="flex mt-1">
+<div class="w-4 h-4 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill ri-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill ri-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill ri-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill ri-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center text-yellow-400">
+<i class="ri-star-fill ri-xs"></i>
+</div>
+</div>
+</div>
+</div>
+<p class="text-sm text-gray-600">"As a barber, this platform has transformed my business. I've gained 30+ regular clients in just two months and the scheduling system is incredibly intuitive."</p>
+</div>
+</section>
+<!-- Security Badges -->
+<section class="mb-8 text-center">
+<div class="flex justify-center gap-4 mb-3">
+<div class="w-8 h-8 flex items-center justify-center text-gray-500">
+<i class="ri-shield-check-line ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-gray-500">
+<i class="ri-lock-line ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center text-gray-500">
+<i class="ri-verified-badge-line ri-lg"></i>
+</div>
+</div>
+<p class="text-xs text-gray-500">Secure payments • Verified professionals • 100% satisfaction guarantee</p>
+</section>
+</main>
+<!-- Registration Modal -->
+<div id="registration-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+<div class="bg-white rounded-xl w-[340px] max-h-[90vh] overflow-y-auto">
+<div class="p-5">
+<div class="flex justify-between items-center mb-5">
+<h2 class="text-xl font-semibold text-gray-900">Create Account</h2>
+<button id="close-modal" class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700">
+<i class="ri-close-line ri-lg"></i>
+</button>
+</div>
+<div class="mb-5">
+<p class="text-sm text-gray-600 mb-4">Please select your account type:</p>
+<div class="flex gap-3">
+<div class="flex-1 border border-primary bg-primary/5 rounded-xl p-3 cursor-pointer">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mb-2">
+<i class="ri-user-line text-primary"></i>
+</div>
+<p class="text-sm font-medium text-gray-800">Client</p>
+</div>
+<div class="flex-1 border border-gray-200 rounded-xl p-3 cursor-pointer">
+<div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mb-2">
+<i class="ri-store-line text-gray-600"></i>
+</div>
+<p class="text-sm font-medium text-gray-800">Provider</p>
+</div>
+</div>
+</div>
+<form id="registration-form">
+<div class="mb-4">
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+<input type="email" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-button text-sm" placeholder="your@email.com" required>
+</div>
+<div class="mb-4">
+<label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+<div class="relative">
+<input type="password" id="password" class="w-full px-3 py-2 border border-gray-300 rounded-button text-sm" placeholder="Create a strong password" required>
+<button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+<i class="ri-eye-line"></i>
+</button>
+</div>
+<div class="mt-2 h-1 bg-gray-200 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-3/4"></div>
+</div>
+<p class="text-xs text-gray-500 mt-1">Password strength: Good</p>
+</div>
+<div class="mb-5">
+<label for="confirm-password" class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+<input type="password" id="confirm-password" class="w-full px-3 py-2 border border-gray-300 rounded-button text-sm" placeholder="Confirm your password" required>
+</div>
+<div class="mb-5">
+<label class="flex items-start gap-2">
+<input type="checkbox" class="mt-1" required>
+<span class="text-xs text-gray-600">I agree to the <a href="#" class="text-primary">Terms of Service</a> and <a href="#" class="text-primary">Privacy Policy</a></span>
+</label>
+</div>
+<button type="submit" class="w-full bg-primary text-white font-medium py-3 rounded-button shadow-sm hover:bg-primary/90 transition-colors">Create Account</button>
+</form>
+<div class="mt-5 text-center">
+<p class="text-sm text-gray-600">Already have an account? <a href="#" class="text-primary font-medium">Log In</a></p>
+</div>
+</div>
+</div>
+</div>
+<!-- Tab Bar -->
+<nav class="fixed w-full bottom-0 bg-white border-t border-gray-200 z-50">
+<div class="grid grid-cols-4 h-16">
+<a href="#" class="flex flex-col items-center justify-center text-primary">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-home-line"></i>
+</div>
+<span class="text-xs mt-1">Home</span>
+</a>
+<a href="#" class="flex flex-col items-center justify-center text-gray-500">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-search-line"></i>
+</div>
+<span class="text-xs mt-1">Search</span>
+</a>
+<a href="#" class="flex flex-col items-center justify-center text-gray-500">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-calendar-line"></i>
+</div>
+<span class="text-xs mt-1">Bookings</span>
+</a>
+<a href="#" class="flex flex-col items-center justify-center text-gray-500">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-user-line"></i>
+</div>
+<span class="text-xs mt-1">Profile</span>
+</a>
+</div>
+</nav>
+<!-- Scripts -->
+<script id="modal-handler">
+document.addEventListener('DOMContentLoaded', function() {
+const signupBtn = document.getElementById('signup-btn');
+const registrationModal = document.getElementById('registration-modal');
+const closeModal = document.getElementById('close-modal');
+const clientCard = document.getElementById('client-card');
+const providerCard = document.getElementById('provider-card');
+signupBtn.addEventListener('click', function() {
+registrationModal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+});
+closeModal.addEventListener('click', function() {
+registrationModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+});
+// Close modal when clicking outside
+registrationModal.addEventListener('click', function(e) {
+if (e.target === registrationModal) {
+registrationModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+});
+// Handle user type selection on landing page
+clientCard.addEventListener('click', function() {
+signupBtn.click();
+});
+providerCard.addEventListener('click', function() {
+signupBtn.click();
+});
+});
+</script>
+<script id="form-handler">
+document.addEventListener('DOMContentLoaded', function() {
+const registrationForm = document.getElementById('registration-form');
+registrationForm.addEventListener('submit', function(e) {
+e.preventDefault();
+const email = document.getElementById('email').value;
+const password = document.getElementById('password').value;
+const confirmPassword = document.getElementById('confirm-password').value;
+if (password !== confirmPassword) {
+// Show error message
+const errorMessage = document.createElement('p');
+errorMessage.textContent = 'Passwords do not match';
+errorMessage.classList.add('text-red-500', 'text-xs', 'mt-1');
+const existingError = document.querySelector('.text-red-500');
+if (existingError) {
+existingError.remove();
+}
+document.getElementById('confirm-password').parentNode.appendChild(errorMessage);
+return;
+}
+// Simulate successful registration
+const modal = document.getElementById('registration-modal');
+modal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+// Show success message
+const successToast = document.createElement('div');
+successToast.classList.add('fixed', 'bottom-20', 'left-1/2', '-translate-x-1/2', 'bg-green-500', 'text-white', 'px-4', 'py-2', 'rounded-full', 'text-sm', 'shadow-lg');
+successToast.textContent = 'Account created successfully!';
+document.body.appendChild(successToast);
+setTimeout(() => {
+successToast.remove();
+}, 3000);
+// Reset form
+registrationForm.reset();
+});
+// Password visibility toggle
+const togglePassword = document.querySelector('.ri-eye-line').parentNode;
+const passwordInput = document.getElementById('password');
+togglePassword.addEventListener('click', function() {
+const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+passwordInput.setAttribute('type', type);
+// Toggle icon
+const icon = this.querySelector('i');
+if (type === 'text') {
+icon.classList.remove('ri-eye-line');
+icon.classList.add('ri-eye-off-line');
+} else {
+icon.classList.remove('ri-eye-off-line');
+icon.classList.add('ri-eye-line');
+}
+});
+});
+</script>
+</body>
+</html>
