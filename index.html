@@ -12,16 +12,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <style>
-:where([class^="ri-"])::before { content: "\f3c2"; }
 body {
 font-family: 'Inter', sans-serif;
-width: 375px;
 margin: 0 auto;
-min-height: 762px;
+min-height: 100vh; /* Use min-height for full viewport height */
 position: relative;
 }
 .gradient-bg {
 background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+}
+/* Ensure hero image object-fit covers well on smaller screens */
+.hero-image {
+object-fit: cover;
+object-position: center; /* Center the image */
 }
 </style>
 </head>
@@ -37,11 +40,11 @@ background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(16, 185, 129
 </div>
 </nav>
 <!-- Main Content -->
-<main class="pt-16 pb-20 px-4">
+<main class="pt-16 pb-20 px-4 max-w-md mx-auto"> <!-- Added max-w-md and mx-auto for responsiveness -->
 <!-- Hero Section -->
 <section class="mt-6 mb-8">
 <div class="rounded-xl overflow-hidden h-48 mb-6">
-<img src="https://readdy.ai/api/search-image?query=diverse%20group%20of%20professional%20service%20providers%2C%20stylists%2C%20technicians%2C%20and%20beauty%20experts%20smiling%20at%20camera%2C%20professional%20photography%2C%20bright%20lighting%2C%20modern%20salon%20interior%2C%20high%20quality%2C%20commercial%20photography&width=800&height=400&seq=1&orientation=landscape" alt="Service Professionals" class="w-full h-full object-cover object-top">
+<img src="https://readdy.ai/api/search-image?query=diverse%20group%20of%20professional%20service%20providers%2C%20stylists%2C%20technicians%2C%20and%20beauty%20experts%20smiling%20at%20camera%2C%20professional%20photography%2C%20bright%20lighting%2C%20modern%20salon%20interior%2C%20high%20quality%2C%20commercial%20photography&width=800&height=400&seq=1&orientation=landscape" alt="Service Professionals" class="w-full h-full object-cover hero-image">
 </div>
 <h1 class="text-2xl font-bold text-gray-900 mb-3">Connect with top professionals in your area</h1>
 <p class="text-gray-600 mb-6">Book appointments with the best stylists, technicians, and service providers. Or grow your business by joining our platform.</p>
@@ -69,8 +72,8 @@ background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(16, 185, 129
 <!-- User Type Selection -->
 <section class="mb-8">
 <h2 class="text-lg font-semibold text-gray-800 mb-4">I want to...</h2>
-<div class="flex flex-col gap-4">
-<div id="client-card" class="border border-gray-200 rounded-xl p-4 cursor-pointer hover:border-primary transition-colors">
+<div class="flex flex-col md:flex-row gap-4"> <!-- Added md:flex-row for larger screens -->
+<div id="client-card" class="border border-gray-200 rounded-xl p-4 cursor-pointer hover:border-primary transition-colors flex-1">
 <div class="flex items-center gap-3 mb-3">
 <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
 <i class="ri-user-line ri-lg text-primary"></i>
@@ -79,7 +82,7 @@ background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(16, 185, 129
 </div>
 <p class="text-sm text-gray-600">Find and book appointments with top professionals in your area.</p>
 </div>
-<div id="provider-card" class="border border-gray-200 rounded-xl p-4 cursor-pointer hover:border-primary transition-colors">
+<div id="provider-card" class="border border-gray-200 rounded-xl p-4 cursor-pointer hover:border-primary transition-colors flex-1">
 <div class="flex items-center gap-3 mb-3">
 <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
 <i class="ri-store-line ri-lg text-secondary"></i>
@@ -135,7 +138,7 @@ background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(16, 185, 129
 <!-- Featured Services -->
 <section class="mb-8">
 <h2 class="text-lg font-semibold text-gray-800 mb-4">Popular Services</h2>
-<div class="grid grid-cols-4 gap-3">
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3"> <!-- Adjusted for better responsiveness -->
 <div class="text-center">
 <div class="w-16 h-16 mx-auto rounded-full overflow-hidden mb-2">
 <img src="https://readdy.ai/api/search-image?query=icon%2C%203D%20cartoon%2C%20hair%20salon%2C%20the%20icon%20should%20take%20up%2070%25%20of%20the%20frame%2C%20vibrant%20colors%20with%20soft%20gradients%2C%20minimalist%20design%2C%20smooth%20rounded%20shapes%2C%20subtle%20shading%2C%20no%20outlines%2C%20centered%20composition%2C%20isolated%20on%20white%20background%2C%20playful%20and%20friendly%20aesthetic%2C%20isometric%20perspective%2C%20high%20detail%20quality%2C%20clean%20and%20modern%20look%2C%20single%20object%20focus&width=128&height=128&seq=2&orientation=squarish" alt="Haircut" class="w-full h-full object-cover">
@@ -239,8 +242,8 @@ background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(16, 185, 129
 </section>
 </main>
 <!-- Registration Modal -->
-<div id="registration-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
-<div class="bg-white rounded-xl w-[340px] max-h-[90vh] overflow-y-auto">
+<div id="registration-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden p-4"> <!-- Added p-4 for modal padding on smaller screens -->
+<div class="bg-white rounded-xl w-full max-w-sm max-h-[90vh] overflow-y-auto"> <!-- Changed w-[340px] to w-full max-w-sm -->
 <div class="p-5">
 <div class="flex justify-between items-center mb-5">
 <h2 class="text-xl font-semibold text-gray-900">Create Account</h2>
@@ -250,7 +253,7 @@ background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(16, 185, 129
 </div>
 <div class="mb-5">
 <p class="text-sm text-gray-600 mb-4">Please select your account type:</p>
-<div class="flex gap-3">
+<div class="flex flex-col sm:flex-row gap-3"> <!-- Added sm:flex-row for larger screens -->
 <div class="flex-1 border border-primary bg-primary/5 rounded-xl p-3 cursor-pointer">
 <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mb-2">
 <i class="ri-user-line text-primary"></i>
@@ -303,7 +306,7 @@ background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(16, 185, 129
 </div>
 <!-- Tab Bar -->
 <nav class="fixed w-full bottom-0 bg-white border-t border-gray-200 z-50">
-<div class="grid grid-cols-4 h-16">
+<div class="grid grid-cols-4 h-16 max-w-md mx-auto"> <!-- Added max-w-md and mx-auto for consistency -->
 <a href="#" class="flex flex-col items-center justify-center text-primary">
 <div class="w-6 h-6 flex items-center justify-center">
 <i class="ri-home-line"></i>
